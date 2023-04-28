@@ -1,0 +1,35 @@
+.flex{
+    display: flex;
+
+
+}
+
+.parent-div{
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pl-5{
+    padding-left: 5px;
+    cursor: pointer;
+
+}
+.pl-5:hover{
+    color: red;
+}
+
+.link{
+    text-decoration: none;
+    color: #fd6212
+}
+.link:hover{
+    color: red;
+    border-bottom: 4.5px solid #f6d212;
+    padding-bottom: 17px;
+}
