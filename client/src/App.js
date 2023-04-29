@@ -7,21 +7,33 @@ import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
-import ServicesAdmin from './components/admin/ServicesAdmin';
+import ServicesAdmin from './components/Admin/ServicesAdmin';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
 
 <BrowserRouter>
-<NavBar />
+{
+  localStorage.getItem('token')?
+  <h1>admin panal</h1>
+  : <NavBar />
+}
+
 <Routes>
   <Route path='/home'element = {<Home />} />
 <Route path ='/about' element ={<About />} />
 <Route path='/services' element={<Services/>}/>
 <Route path='/contacts' element={<Contact/>}/>
-<Route path='/admin/service' element={<ServicesAdmin/>}/>
+<Route path='/admin/services' element={<ServicesAdmin/>}/>
 </Routes>
+{
+  localStorage.getItem('token')?
+  <h1>admin footer</h1>
+  : <Footer />
+}
+
 </BrowserRouter>
     </div>
   );

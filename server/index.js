@@ -34,6 +34,7 @@ app.get('/hello',(req, res)=>{
 //when we click /api/services it will redirect us to servicesController.addServices
 app.post('/api/services', servicesController.addServices)
 app.get('/api/services', servicesController.getServices)
+app.get('/api/slider', servicesController.getSlider)
 
 
 app.listen(5000, ()=>
