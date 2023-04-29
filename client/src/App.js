@@ -9,17 +9,20 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import ServicesAdmin from './components/Admin/ServicesAdmin';
 import Footer from './components/Footer';
+import ListAdmins from './components/Admin/ListAdmins';
+import AddAdmin from './components/Admin/AddAdmins';
+import LoginAdmin from './components/Admin/LoginAdmin';
+import AdminDash from './components/Admin/AdminDashboard';
+
 
 function App() {
   return (
     <div className="App">
 
 <BrowserRouter>
-{
-  localStorage.getItem('token')?
-  <h1>admin panal</h1>
-  : <NavBar />
-}
+
+  <NavBar />
+
 
 <Routes>
   <Route path='/home'element = {<Home />} />
@@ -27,12 +30,13 @@ function App() {
 <Route path='/services' element={<Services/>}/>
 <Route path='/contacts' element={<Contact/>}/>
 <Route path='/admin/services' element={<ServicesAdmin/>}/>
+<Route path = '/admin/list' element={<ListAdmins/>} />
+<Route path = '/admin/add' element={<AddAdmin/>} />
+<Route path = '/admin/login' element={<LoginAdmin/>} />
+<Route path = '/admin/dashboard' element={<AdminDash/>}/>
 </Routes>
-{
-  localStorage.getItem('token')?
-  <h1>admin footer</h1>
-  : <Footer />
-}
+ <Footer />
+
 
 </BrowserRouter>
     </div>

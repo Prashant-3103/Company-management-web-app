@@ -27,3 +27,13 @@
     text-align: center;
 
 }
+
+.filter{
+    padding: 0px 10px;
+    display: flex;
+    width: 400px;
+    height: 30px;
+    justify-content: center;
+    margin: 15px 64%;
+    border-radius: 3px;
+}

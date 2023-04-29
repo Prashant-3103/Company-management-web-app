@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 function Services(){
 
 const [data,setData] = useState({})
+const [filter, setFilter] = useState('')
 
     useEffect(()=>{
             axios.get('http://localhost:5000/api/services')
@@ -15,11 +16,19 @@ const [data,setData] = useState({})
                 console.log(err)
             })
     }, [])
-    return(
+    return(<>
+    <input value={filter} className='filter' onChange={(e) => setFilter(e.target.value)} placeholder='search'  />
         <div className='flex'>
+
+
      {
   data.length > 0?
-data.map((serviceItem, serviceIndex) =>{
+  data
+  .sort((a,b) =>a.title<b.title?-1:1)
+  .filter((item =>{
+    return item.title.includes(filter)
+  }))
+.map((serviceItem, serviceIndex) =>{
    return(
 <div className="card">
    <div className='title'>{serviceItem?.title}</div>
@@ -40,6 +49,6 @@ data.map((serviceItem, serviceIndex) =>{
   : 'no data found'
      }
         </div>
-    )
+    </>)
 }
 export default Services

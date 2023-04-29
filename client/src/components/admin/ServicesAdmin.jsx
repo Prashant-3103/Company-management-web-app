@@ -1,8 +1,11 @@
-import { useState } from 'react'
-import '../Admin/ServicesAdmin.css'
+import { useEffect, useState } from 'react'
+import '../css/ServicesAdmin.css'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function ServicesAdmin(){
+
+const navigate = useNavigate()
 
 const [title, setTitle] = useState('')
 const [desc, setDesc] = useState('')
@@ -12,6 +15,13 @@ const [poc, setPoc] = useState('')
 const [active, setActive] = useState('')
 const [branch, setBranch] = useState('')
 const [cgpa, setCgpa] = useState('')
+
+
+useEffect(()=>{
+    if(!localStorage.getItem('token')){
+        navigate('/home')
+    }
+})
 
 
 const handleChange = (e) =>{
@@ -57,7 +67,10 @@ const handleClick =()=>{
     active: active,
     branch: branch,
     cgpa: cgpa
-})
+
+},
+navigate('/services')
+)
 .then((res)=>{
     console.log(res.data)
 })
