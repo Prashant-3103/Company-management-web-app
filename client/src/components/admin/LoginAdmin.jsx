@@ -13,19 +13,25 @@ const handleClick = () =>{
     console.log(userName,password)
     axios.post('http://localhost:5000/admin/login', {
         userName: userName,
-        password,
+        password: password
 
     })
     .then((res)=>{
         console.log(res.data)
-        localStorage.setItem('type', res.data.type)
-        localStorage.setItem('token', res.data.token)
-navigate('/admin/dashboard')
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-}
+
+
+            if (res.data.message === "login success") {
+
+                navigate('/admin/dashboard')
+            }
+            else{
+
+            }
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
 
     return(
        <div className='card-admin'>

@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 const servicesController = require('./controller/servicesController')
 const adminController = require('./controller/adminController')
-
+const userController = require('./controller/userController');
 
 const app = express()
 
@@ -41,6 +41,13 @@ app.get('/api/slider', servicesController.getSlider)
 app.get('/admin/admins', adminController.getAdmins)
 app.post('/admin/add', adminController.addAdmins)
 app.post('/admin/login', adminController.loginAdmin)
+app.post('/user/add', userController.addUser);
+app.post('/user/login', userController.loginUser);
+app.get('/user/get', userController.getUser);
+app.delete('/user/delete/:id', userController.deleteUser)
+
+
+
 
 app.listen(5000, ()=>
 {

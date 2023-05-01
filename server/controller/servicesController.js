@@ -11,9 +11,6 @@ module.exports.getServices = async (req, res) => {
 };
 
 module.exports.addServices = async (req, res) => {
-
-
-
   const { title, description, role,package,poc, active,branch,cgpa} = req.body;
 
   // Check if title and description fields are present in the request body
@@ -33,7 +30,7 @@ module.exports.addServices = async (req, res) => {
       branch: branch,
       cgpa: cgpa
 
-    });
+    }); 
 
     // Save the new service to the database
     await newService.save();
