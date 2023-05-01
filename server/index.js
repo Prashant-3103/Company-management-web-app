@@ -4,6 +4,8 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const servicesController = require('./controller/servicesController')
+const adminController = require('./controller/adminController')
+
 
 const app = express()
 
@@ -24,6 +26,7 @@ mongoose.connect(DB, {
   console.log("Database connected successfully");
 }).catch((err) => {
   console.error("Error connecting to database: ", err);
+
 });
 
 
@@ -34,7 +37,10 @@ app.get('/hello',(req, res)=>{
 //when we click /api/services it will redirect us to servicesController.addServices
 app.post('/api/services', servicesController.addServices)
 app.get('/api/services', servicesController.getServices)
-
+app.get('/api/slider', servicesController.getSlider)
+app.get('/admin/admins', adminController.getAdmins)
+app.post('/admin/add', adminController.addAdmins)
+app.post('/admin/login', adminController.loginAdmin)
 
 app.listen(5000, ()=>
 {
