@@ -38,7 +38,7 @@ function Services() {
           data
             .sort((a, b) => (a.title < b.title ? -1 : 1))
             .filter((item) => {
-              return item.title.includes(filter);
+              return item.title.includes(filter)
             })
             .map((serviceItem, serviceIndex) => {
               const shortDescription = serviceItem.description
@@ -94,7 +94,7 @@ function Services() {
                 </div>
               );
             })
-      
+
 
         ) : (
           "no data found"
@@ -105,3 +105,6 @@ function Services() {
 }
 
 export default Services;
+
+
+//fetch the same list in user dashboard

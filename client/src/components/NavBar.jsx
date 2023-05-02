@@ -17,19 +17,24 @@ function NavBar(props) {
   };
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
+    console.log("running navbar useeffect")
     const token = localStorage.getItem('token');
+    const type=localStorage.getItem('type')
+
+    console.log(token)
     if (token) {
       setIsLoggedIn(true);
-      if (localStorage.getItem('type') === 'ADMIN') {
+      if (type === 'ADMIN') {
         setIsAdmin(true);
+
       }
     } else {
       setIsLoggedIn(false);
     }
-  }, []);
+  });
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -93,7 +98,7 @@ function NavBar(props) {
               </Link>
             </li>
             <li className='nav_item'>
-              <Link className='nav_link' to='/admin/add-admin'>
+              <Link className='nav_link' to='/admin/add'>
                 ADD ADMIN
               </Link>
             </li>

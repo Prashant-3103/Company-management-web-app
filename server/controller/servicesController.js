@@ -70,5 +70,4 @@ module.exports.deleteServices = async (req, res) => {
     console.log(error);
     return res.send({ code: 500, message: 'Service error' });
   }
-};
-  
+}; 

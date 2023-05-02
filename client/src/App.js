@@ -17,6 +17,7 @@ import UserDash from './components/User/userDashboard';
 import UserList from './components/User/ListUsers';
 import AddUser from './components/User/userRegister';
 import UserServices from './components/User/userServices';
+import Company from "./components/company/CreateCompany"
 
 
 
@@ -35,6 +36,7 @@ function App() {
   <Route path='/home'element = {<Home />} />
 <Route path ='/about' element ={<About />} />
 <Route path='/services' element={<Services/>}/>
+<Route path="/company" element={<Company/>}/>
 <Route path='/contacts' element={<Contact/>}/>
 <Route path='/admin/services' element={<ServicesAdmin/>}/>
 <Route path = '/admin/list' element={<ListAdmins/>} />
@@ -46,6 +48,7 @@ function App() {
 <Route path = '/user/list' element={<UserList/>}/>
 <Route path = '/user/add' element={<AddUser/>}/>
 <Route path = '/user/services' element={<UserServices/>}/>
+
 
 </Routes>
  <Footer />

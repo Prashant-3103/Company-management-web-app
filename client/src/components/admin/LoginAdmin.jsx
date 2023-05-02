@@ -19,6 +19,10 @@ const handleClick = () =>{
     .then((res)=>{
         console.log(res.data)
 
+        const { token,type } = res.data
+        console.log(res.data)
+        localStorage.setItem("token" , token)
+        localStorage.setItem("type", type)
 
             if (res.data.message === "login success") {
 
