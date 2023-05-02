@@ -41,6 +41,8 @@ module.exports.addUser = async (req, res) => {
 };
 
 
+
+
 module.exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {

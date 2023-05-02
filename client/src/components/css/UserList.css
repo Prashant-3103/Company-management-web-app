@@ -1,0 +1,43 @@
+.user-list {
+    margin-top: 2rem;
+    box-shadow: 0 1px 2px rgb(0 0 0 /20%);
+    margin: 5%;
+    padding: 5%;
+  }
+
+  .add-user-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #5cb85c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  th {
+    background-color: #333;
+    color: #fff;
+  }
+
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .delete-btn {
+    background-color: transparent;
+    border: none;
+    color: #f00;
+    cursor: pointer;
+  }

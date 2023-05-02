@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const pocController = require('./controller/pocController')
 const servicesController = require('./controller/servicesController')
 const adminController = require('./controller/adminController')
 const userController = require('./controller/userController');
@@ -45,7 +46,9 @@ app.post('/user/add', userController.addUser);
 app.post('/user/login', userController.loginUser);
 app.get('/user/get', userController.getUser);
 app.delete('/user/delete/:id', userController.deleteUser)
-
+app.get('/poc/get', pocController.getPoc);
+app.post('/poc/add', pocController.addPoc);
+app.post('/poc/login', pocController.loginPoc);
 
 
 
