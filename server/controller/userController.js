@@ -66,19 +66,18 @@ module.exports.loginUser = async (req, res) => {
   }
 };
 
+module.exports.logoutUser = (req, res) => {
+  const { id } = req.params;
+  try {
+    // Remove token from localStorage
+    res.clearCookie('token');
+    return res.status(200).send({ code: 200, message: 'Logout success' });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ code: 500, message: 'Service error' });
+  }
+};
 
 
-module.exports.deleteUser = async (req, res) => {
-    const { id } = req.params;
-    try {
-      const deletedUser = await userModel.findByIdAndDelete(id);
-      if (deletedUser) {
-        return res.send({ code: 200, message: 'User deleted successfully.' });
-      } else {
-        return res.send({ code: 400, message: 'User not found.' });
-      }
-    } catch (error) {
-      console.log(error);
-      return res.send({ code: 500, message: 'Service error' });
-    }
-  };
+
+

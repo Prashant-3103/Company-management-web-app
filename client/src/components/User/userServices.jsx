@@ -16,7 +16,7 @@ function UserServices() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/user/profile", {
+      .get("http://localhost:5000/user/get", {
         withCredentials: true,
       })
       .then((res) => {

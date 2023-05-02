@@ -7,6 +7,8 @@ const pocController = require('./controller/pocController')
 const servicesController = require('./controller/servicesController')
 const adminController = require('./controller/adminController')
 const userController = require('./controller/userController');
+const cookie = require('cookie-parser')
+const session = require('express-session')
 
 const app = express()
 
@@ -49,8 +51,20 @@ app.delete('/user/delete/:id', userController.deleteUser)
 app.get('/poc/get', pocController.getPoc);
 app.post('/poc/add', pocController.addPoc);
 app.post('/poc/login', pocController.loginPoc);
-
-
+app.delete('/services/delete/:id', servicesController.deleteServices)
+app.post('/user/logout/ (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+      return res.send({ code: 500, message: 'Service error' });
+    } else {
+      // Remove the user's token from the client-side
+      res.clearCookie('token');
+      return res.send({ code: 200, message: 'User logged out successfully.' });
+    }
+  });
+});
+);
 
 app.listen(5000, ()=>
 {

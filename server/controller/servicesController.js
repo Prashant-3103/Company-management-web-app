@@ -54,4 +54,21 @@ module.exports.getSlider = (req,res)=>{
   const arr = [url1,url2,url3,url4]
   return res.send({code: 200, message: 'success', data: arr} )
 }
- 
+
+
+//delete the service
+module.exports.deleteServices = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedServices = await servicesModel.findByIdAndDelete(id);
+    if (deletedServices) {
+      return res.send({ code: 200, message: 'User deleted successfully.' });
+    } else {
+      return res.send({ code: 400, message: 'User not found.' });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.send({ code: 500, message: 'Service error' });
+  }
+};
+  

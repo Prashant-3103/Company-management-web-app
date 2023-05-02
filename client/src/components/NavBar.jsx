@@ -41,6 +41,11 @@ function NavBar(props) {
   return (
     <nav className='nav'>
       <h1 className='nav_brand'>University placement cell</h1>
+      <div onClick={navToggler} className={toggleIcon}>
+        <div className='line1'></div>
+        <div className='line2'></div>
+        <div className='line3'></div>
+      </div>
       <ul className={active}>
         <li className='nav_item'>
           <Link className='nav_link' to='/home'>
@@ -107,11 +112,6 @@ function NavBar(props) {
           </li>
         )}
       </ul>
-      <div onClick={navToggler} className={toggleIcon}>
-        <div className='line1'></div>
-        <div className='line2'></div>
-        <div className='line3'></div>
-      </div>
     </nav>
   );
 }
