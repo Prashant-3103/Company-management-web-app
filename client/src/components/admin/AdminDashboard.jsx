@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { faCrosshairs, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import axios from 'axios';
 import '../css/UserList.css';
+import UserList from '../User/ListUsers';
 function AdminDash() {
   const navigate = useNavigate();
   const [service, setService] = useState([]);
@@ -66,6 +68,8 @@ function AdminDash() {
                     <button className='delete-btn' onClick={() => handleDeleteServices(serviceItem._id)}>
                       <FontAwesomeIcon icon={faTrash} />
                     </button>
+
+
                   </td>
 
                 </tr>
@@ -73,6 +77,10 @@ function AdminDash() {
             })}
         </tbody>
       </table>
+
+<UserList />
+
+
     </div>
   )
 }

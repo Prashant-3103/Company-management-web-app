@@ -39,6 +39,6 @@ module.exports.addAdmins = async (req, res) => {
                 type: userExists.type
             })
         } else {
-            return res.send({ code: 500, message: 'Service error' })
+            return res.send({ code: 500, message: 'Service error' }) 
         }
     }

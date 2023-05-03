@@ -63,6 +63,17 @@ module.exports.loginUser = async (req, res) => {
     return res.send({ code: 500, message: 'Service error' });
   }
 };
+
+module.exports.logoutUser = async (req, res) => {
+  try {
+    res.clearCookie('jwt'); // clear the JWT cookie
+    return res.send({ code: 200, message: 'Logout success' });
+  } catch (error) {
+    console.log(error);
+    return res.send({ code: 500, message: 'Service error' });
+  }
+};
+
 module.exports.deleteUser = async (req, res) => {
   const { id } = req.params;
   try {

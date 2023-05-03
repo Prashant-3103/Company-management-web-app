@@ -22,6 +22,12 @@ overflow-x: hidden;
 .nav_link{
   text-decoration: none;
   color: darkgray;
+  padding-left: 3px;
+}
+.nav_link1{
+  text-decoration: none;
+  color: red;
+ 
 }
 
 .nav{
@@ -114,6 +120,13 @@ transition: 0.5sec ease in;
 .logout_button{
   background-color: rgb(218, 49, 49);
   color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .logout_button:hover{

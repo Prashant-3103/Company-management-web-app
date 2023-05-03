@@ -3,6 +3,7 @@ import '../components/css/Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 function NavBar(props) {
+  const[theme,setTheme] = useState("");
   const [active, setActive] = useState('nav_menu');
   const [toggleIcon, setToggleIcon] = useState('nav_toggler');
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ function NavBar(props) {
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
-    console.log("running navbar useeffect")
+
     const token = localStorage.getItem('token');
     const type=localStorage.getItem('type')
 
@@ -37,11 +38,27 @@ function NavBar(props) {
   });
 
   const handleLogout = () => {
+    navigate('/home')
     localStorage.removeItem('token');
     localStorage.removeItem('type');
     setIsLoggedIn(false);
     setIsAdmin(false);
   };
+const toggleTheme = ()=>{
+if(theme==='dark-theme')
+{
+  setTheme('light-theme')
+
+}
+else{
+  setTheme('dark-theme')
+}
+}
+useEffect(()=>{
+  document.body.className = theme;
+}
+)
+
 
   return (
     <nav className='nav'>
@@ -72,12 +89,13 @@ function NavBar(props) {
             CONTACT
           </Link>
         </li>
-        {isLoggedIn ? (
-          <li>
-            <button onClick={handleLogout} className='nav_button'>
-              LOG OUT
-            </button>
-          </li>
+        {isLoggedIn   ? (
+         <>
+          <li>   <button onClick={handleLogout} className='logout_button'>  LOG OUT  </button></li>
+
+<li><Link to ="/user/services"> <button  className='nav_button'> apply FOR COMPANIES</button></Link> </li></>
+
+
         ) : (
           <li>
             <button
@@ -104,6 +122,13 @@ function NavBar(props) {
             </li>
           </>
         )}
+
+        {
+          !isAdmin && (
+            <>
+            </>
+          )
+        }
         {!isLoggedIn && (
           <li>
             <button
@@ -112,10 +137,13 @@ function NavBar(props) {
               }}
               className='nav_button'
             >
-              LOG AS ADMIN/SUBADMIN
+              LOG AS ADMIN or SUBADMIN
             </button>
           </li>
         )}
+
+
+        {/* <li><button className='nav_button' onClick={()=>toggleTheme()}>Dark mode</button></li> */}
       </ul>
     </nav>
   );

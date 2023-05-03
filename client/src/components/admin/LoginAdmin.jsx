@@ -39,7 +39,7 @@ const handleClick = () =>{
 
     return(
        <div className='card-admin'>
-    <h1>LOGIN ADMIN</h1>
+    <h1 className='h1-admin'>LOGIN ADMIN</h1>
     <input type="text" value={userName} placeholder='username' className='input-admin' onChange={(e)=>setUserName(e.target.value)}/>
     <input type="password" value={password} placeholder='password' className='input-admin' onChange={(e)=>setPassword(e.target.value)}/>
 

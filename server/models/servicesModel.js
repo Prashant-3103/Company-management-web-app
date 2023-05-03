@@ -8,7 +8,12 @@ const servicesSchema = new mongoose.Schema({
   poc:{type: String, required: true},
   active: {type: String, required: true},
   branch: {type: String, required: true},
-  cgpa: {type: String, required: true }
+  cgpa: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 10
+},
 
 
 

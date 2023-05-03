@@ -39,7 +39,7 @@ function UserList() {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Password</th>
+            
             <th>Email</th>
             <th>Branch</th>
             <th>CGPA</th>
@@ -52,7 +52,7 @@ function UserList() {
               return (
                 <tr key={userItem._id}>
                   <td>{userItem.name}</td>
-                  <td>{userItem.password}</td>
+
                   <td>{userItem.email}</td>
                   <td>{userItem.branch}</td>
                   <td>{userItem.cgpa}</td>

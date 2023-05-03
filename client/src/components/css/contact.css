@@ -1,0 +1,58 @@
+/* .about-card{
+    padding: 50px 70px;
+    box-shadow: 0px 10px 30px 0px rgb(50 50 50 /16%);
+margin: 70px 50px;
+} */
+
+.contact-card {
+
+  padding: 70px 70px;
+    box-shadow: 0px 10px 30px 0px rgba(50, 50, 50, 0.16);
+margin-right: 20%;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+    margin-top: 30vh;
+    width: 30vw;
+    height: 70vh;
+    align-self: center;
+    margin-left: 30%;
+    align-items: center;
+    background-color: #f8f8f8;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+
+
+    }
+.contact-card:hover{
+    box-shadow: 0px 10px 30px 0px rgba(50, 50, 50, 0.3);
+
+    background-color: #f8f8f8;
+    color: #333;
+
+}
+
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400 ;;
+    margin-bottom: 30px;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  h1:hover{
+    color: #555;
+  }
+
+  .contact-p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: #555;
+
+  }
+
+    @media (max-width: 768px) {
+        width: 80vw;
+        margin-left: 10%;
+    }

@@ -4,7 +4,9 @@ function Home(){
     return(
 
         <div>
-<Carousel />
+
+
+{/* <Carousel /> */}
 <Services>
 
 </Services>

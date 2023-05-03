@@ -1,9 +1,9 @@
 import React from 'react'
-
+import UserServices from '../User/userServices'
 const Company = () => {
   return (
-    <div>
-         <h3>Company</h3>
+    <div className='user-div'>
+         <UserServices />
     </div>
   )
 }
