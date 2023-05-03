@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import '../css/UserList.css';
 import UserList from '../User/ListUsers';
+import DeleteAdmin from './DeleteAdmin';
 function AdminDash() {
   const navigate = useNavigate();
   const [service, setService] = useState([]);
@@ -38,7 +39,7 @@ function AdminDash() {
 
   return (
     <div className='user-list'>
-      <Link to='/admin/services' className='add-user-btn'>Add services</Link>
+      <Link to='/admin/services' className='add-user-btn'>ADD CPOMPANY</Link>
       <table>
         <thead>
           <tr>
@@ -49,6 +50,7 @@ function AdminDash() {
             <th>Poc</th>
             <th>Branch</th>
             <th>CGPA</th>
+
           </tr>
         </thead>
         <tbody>
@@ -77,6 +79,7 @@ function AdminDash() {
             })}
         </tbody>
       </table>
+<DeleteAdmin />
 
 <UserList />
 

@@ -52,7 +52,7 @@ app.delete('/user/delete/:id', userController.deleteUser)
 app.get('/poc/get', pocController.getPoc);
 app.post('/poc/add', pocController.addPoc);
 app.post('/poc/login', pocController.loginPoc);
-
+app.delete('/admin/delete/:id', adminController.deleteAdmin)
 
 
 app.delete('/services/delete/:id', servicesController.deleteServices)

@@ -34,16 +34,16 @@ function UserList() {
 
   return (
     <div className='user-list'>
-      <Link to='/user/add' className='add-user-btn'>Add User</Link>
+      <Link to='/user/add' className='add-user-btn'>ADD USER</Link>
       <table>
         <thead>
           <tr>
             <th>Name</th>
-            
+
             <th>Email</th>
             <th>Branch</th>
             <th>CGPA</th>
-            <th>Actions</th>
+            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>

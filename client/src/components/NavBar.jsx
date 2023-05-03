@@ -81,7 +81,7 @@ useEffect(()=>{
         </li>
         <li className='nav_item'>
           <Link className='nav_link' to='/services'>
-            SERVICES
+            COMPANIES
           </Link>
         </li>
         <li className='nav_item'>
@@ -93,7 +93,10 @@ useEffect(()=>{
          <>
           <li>   <button onClick={handleLogout} className='logout_button'>  LOG OUT  </button></li>
 
-<li><Link to ="/user/services"> <button  className='nav_button'> apply FOR COMPANIES</button></Link> </li></>
+<li>
+  {/* <Link to ="/user/services"> <button  className='nav_button'> apply FOR COMPANIES</button></Link> */}
+
+  </li></>
 
 
         ) : (
@@ -112,7 +115,7 @@ useEffect(()=>{
           <>
             <li className='nav_item'>
               <Link className='nav_link' to='/admin/services'>
-                ADD SERVICES
+                ADD COMPANY
               </Link>
             </li>
             <li className='nav_item'>

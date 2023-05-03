@@ -32,7 +32,7 @@ function ListAdmins() {
         <thead>
           <tr>
             <th>Username</th>
-            <th>Password</th>
+           
             <th>Type</th>
             <th>Status</th>
             <th>Date</th>
@@ -44,7 +44,7 @@ function ListAdmins() {
               return (
                 <tr key={adminIndex}>
                   <td>{adminItem.userName}</td>
-                  <td>{adminItem.password}</td>
+
                   <td>{adminItem.type}</td>
                   <td>{adminItem.status}</td>
                   <td>{adminItem.date}</td>

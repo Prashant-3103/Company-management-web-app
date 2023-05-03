@@ -18,6 +18,7 @@ import UserList from './components/User/ListUsers';
 import AddUser from './components/User/userRegister';
 import UserServices from './components/User/userServices';
 import Company from "./components/company/CreateCompany"
+import DeleteAdmin from './components/Admin/DeleteAdmin';
 
 
 
@@ -50,7 +51,7 @@ function App() {
 <Route path = '/user/list' element={<UserList/>}/>
 <Route path = '/user/add' element={<AddUser/>}/>
 <Route path = '/user/services' element={<UserServices/>}/>
-
+<Route path = '/admin/delete' element={<DeleteAdmin/>}/>
 
 
 </Routes>
