@@ -13,23 +13,33 @@ const handleClick = () =>{
     console.log(userName,password)
     axios.post('http://localhost:5000/admin/login', {
         userName: userName,
-        password,
+        password: password
 
     })
     .then((res)=>{
         console.log(res.data)
-        localStorage.setItem('type', res.data.type)
-        localStorage.setItem('token', res.data.token)
-navigate('/admin/dashboard')
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-}
+
+        const { token,type } = res.data
+        console.log(res.data)
+        localStorage.setItem("token" , token)
+        localStorage.setItem("type", type)
+
+            if (res.data.message === "login success") {
+
+                navigate('/admin/dashboard')
+            }
+            else{
+
+            }
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
 
     return(
        <div className='card-admin'>
-    <h1>LOGIN ADMIN</h1>
+    <h1 className='h1-admin'>LOGIN ADMIN</h1>
     <input type="text" value={userName} placeholder='username' className='input-admin' onChange={(e)=>setUserName(e.target.value)}/>
     <input type="password" value={password} placeholder='password' className='input-admin' onChange={(e)=>setPassword(e.target.value)}/>
 

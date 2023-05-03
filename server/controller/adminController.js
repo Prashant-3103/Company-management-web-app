@@ -42,3 +42,17 @@ module.exports.addAdmins = async (req, res) => {
             return res.send({ code: 500, message: 'Service error' })
         }
     }
+    module.exports.deleteAdmin= async (req, res) => {
+        const { id } = req.params;
+        try {
+          const deletedAdmin = await adminModel.findByIdAndDelete(id);
+          if (deletedAdmin) {
+            return res.send({ code: 200, message: 'admin deleted successfully.' });
+          } else {
+            return res.send({ code: 400, message: 'admin not found.' });
+          }
+        } catch (error) {
+          console.log(error);
+          return res.send({ code: 500, message: 'Service error' });
+        }
+      };
